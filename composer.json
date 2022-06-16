@@ -1,0 +1,28 @@
+{
+    "name": "temirkhann/openapi-validator-bundle",
+    "description": "An OpenAPI specification validator for a symfony application",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Temirkhann\\OpenapiValidatorBundle\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Temirkhan",
+            "homepage": "https://temirkhan.nasukhov.me"
+        }
+    ],
+    "require": {
+        "php": "^7.4|~8.0|~8.1",
+        "symfony/dependency-injection": "^5.4",
+        "symfony/http-kernel": "^5.4"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-master",
+        "phpunit/phpunit": "^9.5",
+        "phpstan/phpstan": "^1.7",
+        "squizlabs/php_codesniffer": "^3.7"
+    }
+}

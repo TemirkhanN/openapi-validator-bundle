@@ -3,5 +3,6 @@
 .phpstan
 .phpcs-cache
 phpcs.xml
+composer.lock
 vendor
 phpunit.xml
