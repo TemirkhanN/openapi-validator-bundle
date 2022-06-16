@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace TemirkhanN\OpenapiValidatorBundle;
 
-class OpenapiValidatorBundle
-{
+use Symfony\Component\HttpKernel\Bundle\Bundle;
 
+class OpenapiValidatorBundle extends Bundle
+{
 }

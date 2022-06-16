@@ -1,0 +1,3 @@
+services:
+  Test\TemirkhanN\OpenapiValidatorBundle\Kernel\SomeTestController:
+    tags: ['controller.service_arguments']

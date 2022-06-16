@@ -1,0 +1,23 @@
+services:
+  openapi_validator.psr17_factory:
+    class: Nyholm\Psr7\Factory\Psr17Factory
+
+  openapi_validator.psr_http_bridge:
+    class: Symfony\Bridge\PsrHttpMessage\Factory\PsrHttpFactory
+    arguments:
+      - '@openapi_validator.psr17_factory'
+      - '@openapi_validator.psr17_factory'
+      - '@openapi_validator.psr17_factory'
+      - '@openapi_validator.psr17_factory'
+
+  openapi_validator.validator:
+    class: TemirkhanN\OpenapiValidatorBundle\Validator\Validator
+    arguments:
+      - '%openapi_validator.specification%'
+
+  openapi_validator.event.validate_request_subscriber:
+    class: TemirkhanN\OpenapiValidatorBundle\Event\ValidateRequestSubscriber
+    arguments:
+      - '@openapi_validator.validator'
+      - '@openapi_validator.psr_http_bridge'
+    tags: [ 'kernel.event_subscriber' ]

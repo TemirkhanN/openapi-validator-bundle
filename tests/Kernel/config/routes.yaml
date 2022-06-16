@@ -1,0 +1,9 @@
+index:
+  path: /
+  methods: [GET]
+  controller: Test\TemirkhanN\OpenapiValidatorBundle\Kernel\SomeTestController::index
+
+pet.create:
+  path: /pet/findByStatus
+  methods: [GET]
+  controller: Test\TemirkhanN\OpenapiValidatorBundle\Kernel\SomeTestController::index

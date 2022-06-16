@@ -1,0 +1,2 @@
+openapi_validator:
+  specification: '%kernel.project_dir%/openapi.yaml'
