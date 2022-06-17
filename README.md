@@ -1,6 +1,11 @@
 # openapi-validator-bundle
 An OpenAPI specification validator for a symfony application
 
+It checks if the request and response from your symfony application matches your openapi documentation file.  
+If the endpoint is not documented, receives or responds with mismatching payload it will throw `ValidationError`.  
+This comes in handy when application has integration/functional/manual tests because it will alert early that documentation 
+is outdated.  
+
 ## Installation
 
 Not ready yet.
