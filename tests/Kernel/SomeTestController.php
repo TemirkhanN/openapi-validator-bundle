@@ -12,4 +12,9 @@ class SomeTestController
     {
         return new Response();
     }
+
+    public function internalError(): Response
+    {
+        return new Response('', 500);
+    }
 }

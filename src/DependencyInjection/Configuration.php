@@ -16,6 +16,22 @@ class Configuration implements ConfigurationInterface
         $treeBuilder->getRootNode()
             ->children()
                 ->scalarNode('specification')->end()
+                ->arrayNode('policy')->addDefaultsIfNotSet()
+                     ->children()
+                        ->arrayNode('exclude')->addDefaultsIfNotSet()
+                        ->info('Exclude requests matching following policy from validation')
+                            ->children()
+                                ->arrayNode('paths')
+                                    ->scalarPrototype()->end()
+                                ->end()
+                                ->arrayNode('status_codes')
+                                    ->defaultValue([500])
+                                    ->integerPrototype()->end()
+                                ->end()
+                            ->end()
+                        ->end()
+                     ->end()
+                ->end()
             ->end();
 
         return $treeBuilder;

@@ -15,6 +15,11 @@ services:
     arguments:
       - '%openapi_validator.specification%'
 
+  openapi_validator.limited_validator:
+    class: TemirkhanN\OpenapiValidatorBundle\Validator\Policy\LimitedValidationDecorator
+    decorates: 'openapi_validator.validator'
+    arguments: ['@.inner']
+
   openapi_validator.event.validate_request_subscriber:
     class: TemirkhanN\OpenapiValidatorBundle\Event\ValidateRequestSubscriber
     arguments:

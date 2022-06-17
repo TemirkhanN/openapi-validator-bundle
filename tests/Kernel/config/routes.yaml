@@ -7,3 +7,13 @@ pet.create:
   path: /pet/findByStatus
   methods: [GET]
   controller: Test\TemirkhanN\OpenapiValidatorBundle\Kernel\SomeTestController::index
+
+internal_error:
+  path: /error500
+  methods: [GET]
+  controller: Test\TemirkhanN\OpenapiValidatorBundle\Kernel\SomeTestController::internalError
+
+internal_route:
+  path: /some-internal/index
+  methods: [GET]
+  controller: Test\TemirkhanN\OpenapiValidatorBundle\Kernel\SomeTestController::index

@@ -45,6 +45,23 @@ class ValidateRequestSubscriberTest extends KernelTestCase
         $this->dispatchRequest($request);
     }
 
+    public function testExcludeResponseCode(): void
+    {
+        $request = Request::create('/error500', 'GET');
+
+        $response = $this->dispatchRequest($request);
+
+        self::assertEquals(500, $response->getStatusCode());
+    }
+
+    public function testExcludeRoute(): void
+    {
+        $request = Request::create('/some-internal/index', 'GET');
+
+        $response = $this->dispatchRequest($request);
+
+        self::assertEquals(200, $response->getStatusCode());
+    }
 
     private function dispatchRequest(Request $request): Response
     {

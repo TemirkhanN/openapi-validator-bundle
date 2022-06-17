@@ -40,3 +40,27 @@ openapi_validator:
 
 ```
 
+## Configuration
+
+If you have multiple sections in your application or for some reason don't want to apply validation to some particular  
+endpoints you can use exclusion policy
+
+```yaml
+openapi_validator:
+  specification: '%kernel.project_dir%/openapi.yaml'
+  policy:
+    exclude:
+      paths:
+        - '#^/some-internal/#'
+      status_codes:
+        - 304
+        - 500
+```
+
+`paths` accepts list of regexp patterns. If the request path(not URI) matches pattern then validation will be omitted.  
+> defaults value is empty list - validation is applied to every single route.
+
+
+`status_codes` accepts list of integer values which represent http status-codes. If response code matches any of these  
+then validation will be omitted.  
+> default value is 500. There should never be 500 in API documentation.
