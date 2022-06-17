@@ -8,8 +8,6 @@ is outdated.
 
 ## Installation
 
-Not ready yet.
-
 ```bash
 composer require temirkhann/openapi-validator-bundle
 ```
